@@ -1,0 +1,14 @@
+<div class="container">
+<h1>Find the longest word:</h1>
+
+<ul>
+<% @letters.each { |n|  "#{n}" }%>
+</ul>
+<form action="/score" method="post">
+  <input type="text" name="attempt">
+  <input type="submit" value="Attempt!">
+  <input name="startTime" value="<%=@start_time%>" type="hidden" />
+  <input name="letters" value="<%=@letters_string%>" type="hidden" />
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+</div>
